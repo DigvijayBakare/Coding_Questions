@@ -17,5 +17,10 @@ public class SecondSmallestAndLargest {
         List<Integer> list = Arrays.asList(arr);
         Optional<Integer> secSmall = list.stream().sorted().skip(1).min(Comparator.naturalOrder());
         System.out.println("The second-smallest number in the list: " + secSmall.get());
+
+        // finding the second-smallest number in the list
+        List<Integer> list1 = Arrays.asList(arr);
+        Optional<Integer> secLarge = list.stream().sorted((a, b) -> b-a).skip(1).findFirst();
+        System.out.println("The second-largest number in the list: " + secLarge.get());
     }
 }
